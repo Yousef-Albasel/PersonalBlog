@@ -1,9 +1,9 @@
-baseURL = 'http://albasel.netlify.app/'
+baseURL = 'https://albasel.netlify.app/'
 languageCode = 'en-us'
 title = 'Albasel Blog'
 theme = "awesome"
 enableEmoji = true
-disqusShortname = "Albasel Blog"
+disqusShortname = "albasel-blog"
 
 [[menu.main]]
   name ="Home"
