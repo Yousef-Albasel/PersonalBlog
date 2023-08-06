@@ -1,0 +1,47 @@
+baseURL = 'https://albasel.netlify.app/'
+languageCode = 'en-us'
+title = 'Albasel Blog'
+theme = "awesome"
+enableEmoji = true
+disqusShortname = "Albasel Blog"
+
+[[menu.main]]
+  name ="Home"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 2
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 3
+[[menu.main]]
+  name = "Thoughts"
+  url = "/Thoughts/"
+  weight = 4
+
+[params]
+  goToTop = true
+  disqusShortname= true
+  sitename = "Awesome hugo blog"
+[params.author]
+  avatar = "avatar.jpeg" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "Albasel Personal Blog"
+  name = "Albasel Y"
+  description = "Anything that comes to my mind, whether it’s tech posts, history, or even my most personal thoughts."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/Yousef-Albasel"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/yousef-albasel-3040a0260/"
+
+[[params.socialIcons]]
+name = "youtube"
+url = "https://www.youtube.com/channel/UC1b7IXklDYmLL6WaViAn3sA"
+

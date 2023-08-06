@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Albasel Blog</title>
+    <link>https://albasel.netlify.app/</link>
+    <description>Recent content on Albasel Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Jul 2023 23:03:03 +0300</lastBuildDate><atom:link href="https://albasel.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About This Blog</title>
+      <link>https://albasel.netlify.app/posts/about-this-blog/</link>
+      <pubDate>Sun, 30 Jul 2023 23:03:03 +0300</pubDate>
+      
+      <guid>https://albasel.netlify.app/posts/about-this-blog/</guid>
+      <description>in this blog i will be posting anything in my mind, whether it was tech posts or history or maybe even my so personal thoughts. im planning to make it interesting and entertaining so please enjoy walking in my blog</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://albasel.netlify.app/posts/my-first-post/</link>
+      <pubDate>Sun, 30 Jul 2023 21:27:02 +0300</pubDate>
+      
+      <guid>https://albasel.netlify.app/posts/my-first-post/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
