@@ -1,4 +1,4 @@
-baseURL = 'https://albasel.netlify.app/'
+baseURL = 'http://albasel.netlify.app/'
 languageCode = 'en-us'
 title = 'Albasel Blog'
 theme = "awesome"
