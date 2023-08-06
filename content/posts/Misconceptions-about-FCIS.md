@@ -16,16 +16,17 @@ Having already covered why math is related to CS[ (you can check it here)](https
 
 **yes ** :nerd_face: :sleeping:
 
-####4- Easy Study
+#### 4- Easy Study
 
 It depends on what kind of person you are. If you are satisfied with getting D and D+ grades and doing simple calculator projects, then yes, it may seem easy.
 
 On the other hand, if your goal is to secure a decent job, even if it's an entry-level position with a lower salary, you will need to study college subjects very well, excel in coding and problem-solving, and make some badass projects on your CV. This won't come easily; it will require hard work, dedication, and may even lose your physical and mental health. However, it's worth it. :smile:
 
-####5- Easy Money
+#### 5- Easy Money
+
 Only for those i mentioned in the earlier point.
 
-####6-  College teaches only the basics
+#### 6-  College teaches only the basics
 
 
 That's one of the biggest misconceptions I hear every day. We all know that academic university curriculum is never enough for landing a job. This is a global issue in every specialization worldwide. However, the misconception here is that people mix up learning basics and learning fundamentals. You can't start building AI models without understanding linear algebra and calculus. You can't excel in web development without learning to think algorithmically. Even though technology changes every second, fundamentals help you grow faster in any field.
@@ -34,11 +35,11 @@ College gives you a deep study into a lot of topics including: Advanced networki
 
 and then you can learn any market track that won't be a problem.
 
-####7- Can't i just cover all the curriculum myself?
+#### 7- Can't i just cover all the curriculum myself?
 Yes indeed, it's 2023.
 But at some conditions : you are completely free and got enough time to focus on studying CS, and practise problem solving, making big projects and learn to work with a team. And you **ACTUALLY LOVE DOING IT.**
 
-###8- Is it worthy?
+#### 8- Is it worthy?
 I believe it's worth studying CS in college because you are constantly surrounded by a community that shares the same goals as you. Professors won't mislead you into thinking they will provide everything you need; instead, they guide you on what to do and how to fill the gap between academic learning and practical learning.
 
 I think i covered a lot of misconceptions that no one speaks about, you can share your thoughts using the new disqus system i added to the site :)
