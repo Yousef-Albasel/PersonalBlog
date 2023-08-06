@@ -27,7 +27,7 @@ disqusShortname = "albasel-blog"
   disqusShortname= true
   sitename = "Awesome hugo blog"
 [params.author]
-  avatar = "avatar.jpeg" # put the file in assets folder; also ensure that image has same height and width
+  avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Albasel Personal Blog"
   name = "Albasel Y"
