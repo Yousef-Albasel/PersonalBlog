@@ -21,10 +21,6 @@ disqusShortname = "albasel-blog"
   name = "Thoughts"
   url = "/Thoughts/"
   weight = 4
-[[menu.main]]
-  name ="PopAdam"
-  url = "/PopAdam/"
-  weight = 5
 [params]
   goToTop = true
   disqusShortname= true
