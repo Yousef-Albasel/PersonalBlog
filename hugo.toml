@@ -18,8 +18,8 @@ disqusShortname = "albasel-blog"
   url = "/posts/"
   weight = 3
 [[menu.main]]
-  name = "Thoughts"
-  url = "/Thoughts/"
+  name = "Books"
+  url = "/Books/"
   weight = 4
 [params]
   goToTop = true

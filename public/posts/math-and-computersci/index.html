@@ -3,11 +3,11 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">404 Page not found | Albasel Blog</title>
-<meta property="og:title" content="404 Page not found | Albasel Blog" />
-<meta name="twitter:title" content="404 Page not found | Albasel Blog" />
-<meta itemprop="name" content="404 Page not found | Albasel Blog" />
-<meta name="application-name" content="404 Page not found | Albasel Blog" />
+<title itemprop="name">Math and Computersci | Albasel Blog</title>
+<meta property="og:title" content="Math and Computersci | Albasel Blog" />
+<meta name="twitter:title" content="Math and Computersci | Albasel Blog" />
+<meta itemprop="name" content="Math and Computersci | Albasel Blog" />
+<meta name="application-name" content="Math and Computersci | Albasel Blog" />
 <meta property="og:site_name" content="Awesome hugo blog" />
 
 <meta name="description" content="">
@@ -28,12 +28,50 @@
 
 
 
+    
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-08-01T12:19:41&#43;0300 />
+    <meta property="article:published_time" content=2023-08-01T12:19:41&#43;0300 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Math and Computersci",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-08-01",
+        "description": "",
+        "wordCount":  491 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-08-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Albasel Blog"
+        }
+    }
+    </script>
+
 
 <meta name="generator" content="Hugo 0.115.4">
 
     
 
-    <link rel="canonical" href="https://albasel.netlify.app/404.html">
+    <link rel="canonical" href="https://albasel.netlify.app/posts/math-and-computersci/">
     <link href="/style.min.840eada6dfddec7b8ccfcf867f039bf80b1f16a265ec6e01dc553a3dddc9d509.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -126,11 +164,62 @@ stroke-linejoin="round" class="feather feather-home">
     </nav>
 </div>
 
-<div class="wrapper">
-    <main class="main-404" aria-label="Content">
-        <h1>404 NOT FOUND</h1>
-        <p>You just hit a route that doesn't exist.</p>
-    </main>
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Math and Computersci</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-08-01T12:19:41&#43;03:00" itemprop="datePublished"> Aug 1, 2023 </time>
+                </div>
+                
+            </header><div class="page-content">
+                <p>I never was a fan of <strong>Mathematics</strong>. Maybe it&rsquo;s the way I learned it in my early days. Why do we CS students study it? Aren&rsquo;t we supposed to create some C++ programs instead? Well, actually, math is crucial for programmers: those who just need to create web pages, and those who build AI models.</p>
+<p><strong>For web developers</strong> , math plays a crucial role in the process of creating both front and back ends. It is necessary for performing algorithm optimizations, designing responsive layouts, analyzing user behavior, implementing encryption and security measures, as well as handling tasks like data processing, database queries, and financial calculations. Math comes in handy no doubt.</p>
+<p><strong>Both machine learning and data science</strong> heavily rely on linear algebra, calculus, statistics, and probability. Both fields are built upon mathematical prerequisites, as these concepts are essential for optimization, understanding data distributions, and constructing the actual algorithms!</p>
+<h3 id="how-computers-do-math">How computers do math</h3>
+<p>Let&rsquo;s take a walk on how computers do math, the responsible part for math is the <strong>Arithmetic Logic Unit (ALU)</strong>. All that it does is math. Next to it is the <strong>Floating Point Unit (FPU)</strong> to handle more precise numbers. Everything else that the computer does from the instruction set perspective is to control which <strong>mathematical</strong> instructions are operated when and to actually move data around so that it&rsquo;s in the right place for the next bit of math.</p>
+<p>Arithmetic Logic Unit design:
+<img src="https://zipcpu.com/img/alu-simple.svg" alt=""></p>
+<p>And it uses the binary representation to perform any math-related operations, as it can&rsquo;t read base 10 numbers directly. From a high-level perspective, we teach computers to perform more complex operations using algorithms.</p>
+<h3 id="motivation">Motivation</h3>
+<p>One application that i find really interesting is the donut math projection.</p>
+<p><img src="https://hackaday.com/wp-content/uploads/2020/07/spinning-donut-thumb.gif?w=600&amp;h=600" alt=""></p>
+<p>at it&rsquo;s core,it&rsquo;s a circle that rotates around Y - Axis to construct donut shape, the code uses 3D perspective projection to convert 3D coordinates (x, y, z) into 2D screen coordinates (x&rsquo;, y&rsquo;). It projects points onto a plane located at a fixed distance (z&rsquo;) from the viewer.
+using this equation : (x&rsquo;, y&rsquo;) =** (K1 * x / (z + K2), K1 * y / (z + K2))**</p>
+<p><img src="https://www.a1k0n.net/img/perspective.png" alt=""></p>
+<p>That&rsquo;s all I really know for now. You can view all the information <a href="http://https://www.a1k0n.net/2011/07/20/donut-math.html" title="here">here.</a>
+another application that i really like and i plan to write about it more is the Perlin Noise Algorithm.
+<img src="https://user-images.githubusercontent.com/111648493/253647549-0e46589f-a1f7-4d7d-a3ed-18f24f4e3a84.png" alt=""></p>
+<p><strong>Perlin noise</strong> is a type of procedural noise used in computer graphics and simulations to create natural-looking textures, patterns, and animations. It was developed by <strong>Ken Perlin</strong> in 1983, it uses simple linear algebra concepts to create a grid of pixels with gray scale values between(0-255) that are smoothly varying across the grid, simulating natural patterns such as mountains, clouds, or textures. These grayscale values represent different levels of intensity or elevation.</p>
+<p>and i already created a <a href="https://github.com/Yousef-Albasel/Perlin-Noise-Generator" title="repo">repo</a> that has the implemention in details.
+also check out : <a href="https://rtouti.github.io/graphics/perlin-noise-algorithm" title="this">this</a> and <a href="https://iq.opengenus.org/perlin-noise/" title="this">this</a>.</p>
+<p>I hope that was enough reason for why do computer science students need to study math.</p>
+
+            </div>
+        </article><hr style="margin-top: 40px; margin-bottom: 40px;" />
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "albasel-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></main>
 </div>
 <footer class="footer">
     <span class="footer_item"> </span>

@@ -1,6 +1,6 @@
 {
-    "name": "Albasel Blog",
-    "short_name": "Albasel Blog",
+    "name": "Awesome hugo blog",
+    "short_name": "Awesome hugo blog",
     "start_url": "https://albasel.netlify.app/",
     "theme_color": "#434648",
     "background_color": "#ffffff",
