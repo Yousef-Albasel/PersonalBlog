@@ -10,9 +10,6 @@ Object-oriented programming is a programming paradigm, or classification, that o
   
 It is important to note that the title of this first chapter is "Introduction to Object-Oriented Concepts." The operative word here is "Concepts," not "technologies." Technologies change very quickly in the software industry, whereas concepts evolve.
 
-#### Objects and Legacy systems
-OOP and Structured Programming don't compete with each other, they are complementary.
-
 ## Procedural Programming vs OOP
 
 In OO Design the attributes and behaviors are contained within a single in object, whereas in procedural or structured design the attributes and behaviors are normally separated.
