@@ -18,7 +18,9 @@
             </details>
             {{- end -}}
             <div class="page-content">
+ 
                 {{ .Content }}
+	        {{ partial "series.html" . }}
             </div>
         </article>
         {{- partial "comments.html" . -}}

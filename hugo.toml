@@ -48,3 +48,5 @@ url = "https://www.linkedin.com/in/yousef-albasel-3040a0260/"
 name = "youtube"
 url = "https://www.youtube.com/channel/UC1b7IXklDYmLL6WaViAn3sA"
 
+[taxonomies]
+   series = "series"

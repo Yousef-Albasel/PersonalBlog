@@ -2,6 +2,7 @@
 title: "Math and Computersci"
 date: 2023-08-01T12:19:41+03:00
 draft: true
+series: ['OOP Course Notes Series']
 ---
 
 I never was a fan of **Mathematics**. Maybe it's the way I learned it in my early days. Why do we CS students study it? Aren't we supposed to create some C++ programs instead? Well, actually, math is crucial for programmers: those who just need to create web pages, and those who build AI models.

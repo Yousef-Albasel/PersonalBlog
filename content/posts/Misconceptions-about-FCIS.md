@@ -2,6 +2,7 @@
 title: "Misconceptions About FCIS"
 date: 2023-08-06T22:23:02+03:00
 draft: true
+series: ['OOP Course Notes Series']
 ---
 
 High school exams are finished, and a lot of students have started looking for the perfect college to fit their ambitions and desires. Computer science has become the trend nowadays, with students from all steams wanting to join it. Unfortunately, a lot of misconceptions happen when it comes to talking about Computer Science college.
