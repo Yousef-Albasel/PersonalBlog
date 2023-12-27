@@ -6,10 +6,23 @@ series: ['OOP Course Notes Series']
 description : "OOP Course Notes taken for programming II course."
 
 ---
+بسم الله الرحمن الرحيم
 
-{{ range .Pages.ByDate.Reverse }}
-  {{ if in .File.Path "subpages" }}
-    ## [{{ .Title }}]({{ .Permalink }})
-    {{ .Summary }}
-  {{ end }}
-{{ end }}
+## What is this page?
+------------
+These are my notes for **CS213 OOP** course created for the purpose of revision for the finals.
+
+
+
+## What can i find here ?
+------------
+My notes for:
+- Summary for each lecture.
+- Code snippets from lectures.
+- Code examples for each topic, written by Dr. El Ramly.
+- Laps Solutions
+
+
+
+
+

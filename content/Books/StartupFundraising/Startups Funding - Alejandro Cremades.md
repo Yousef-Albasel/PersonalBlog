@@ -1,7 +1,7 @@
 ---
 title: "Startups Funding   Alejandro Cremades"
 date: 2023-09-02T17:01:50+03:00
-draft: true
+draft: false
 ---
 
 <div dir="rtl">
