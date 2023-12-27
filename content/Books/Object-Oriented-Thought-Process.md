@@ -17,10 +17,7 @@ In OO Design the attributes and behaviors are contained within a single in objec
 ![Object-Oriented Programming Concepts](https://devopedia.org/images/article/264/9332.1585228697.jpg)
 ![C++ Classes and Objects - GeeksforGeeks](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Classes-and-Objects-in-C.png)
 
-#### Data Hiding
 
-by combining attributes & methods, which is encapsulation, we can control access to the data in the `Math` object. By defining these integers as off-limits, another unconnected function cannot manipulate the integers myInt1 and myInt2 - Only the `Math` object can.
-https://www.youtube.com/watch?v=LodRm5BiVro
 #### What Exactly Is an Object?
  Objects are the building blocks of an OO program. A program that uses OO technology is basically a collection of objects.
  
@@ -31,10 +28,22 @@ In short, a class is a blueprint for an object. When you instantiate an object, 
 An object cannot be instantiated without a class.
 
 ![OOP in JavaScript: Explained using games | by ALEXANDRU TAPIRDEA | Level Up  Coding](https://miro.medium.com/v2/resize:fit:717/0*ieq1DK9xP2q2Ztrv)
-## Encapsulation 
+## Encapsulation vs DataHiding
 
-In a good OOP design, an object should reveal only the interfaces other objects interact with. 
-For example, consider this class:
+In general Encapsulation means to bundle similar items, simple as that.
+
+For example, take a Student class where we will have students instance variables and behaviors/methods acting on those instance variables @ one place.
+
+Why it is important? We don't want our code scattered all around in our code Base.
+
+If let say we need to make changes then we need find the variants(of that changes) at all the places. By Bundling similar items we are just avoiding such scenarios and it also helps to make our Bundled code more focused.
+
+### Data Hiding
+It just provides a way to protect your data from the outside world. What it means is, lets say if I made my instance variable public, then anyone can change its state. But if we make our instance variable private/protected then actually we are restricting outside entities from making changes to it.
+
+Source : https://stackoverflow.com/questions/12013448/encapsulation-vs-data-hiding-java
+
+
 ```python
 class Car:
 def __init__(self,speed,color):
