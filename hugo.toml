@@ -21,16 +21,20 @@ disqusShortname = "albasel-blog"
   name = "Books"
   url = "/Books/"
   weight = 4
+[[menu.main]]
+  name = "Courses"
+  url = "/courses/"
+  weight = 5
 [params]
   goToTop = true
   disqusShortname= true
-  sitename = "Awesome hugo blog"
+  sitename = "Albasel blog"
 [params.author]
   avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Albasel Personal Blog"
   name = "Albasel Y"
-  description = "Anything that comes to my mind, whether it’s tech posts, history, or even my most personal thoughts."
+  description = "Anything that comes to my mind."
 
 [[params.socialIcons]]
 name = "github"
