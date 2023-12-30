@@ -17,7 +17,6 @@
 <a href="#" title="Go to top" id="totop">
     {{ partial "svgs/arrowUp.svg" (dict "height" 48 "width" 48) . }}
 </a>
-{{- partial "disqus.html" . }}	
 {{ if (findRE "<pre" .Content 1) }}
 {{ $jsCopy := resources.Get "js/copy-code-button.js" | minify }}
 <script src="{{ $jsCopy.RelPermalink }}"></script>
