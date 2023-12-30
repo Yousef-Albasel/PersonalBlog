@@ -7,7 +7,7 @@ series: ['OOP Course Notes Series']
 
 First let's Discuss **Inheritance** in C++.
 
-####Inheritance: 
+#### Inheritance: 
 
 **Is to create child classes from a parent class, inheriting all it's features and more!**
 
@@ -16,7 +16,7 @@ Derived classes **absorb** all features of existing classes including their data
 Inheritance provides us a mechanism of **software reusability** which is one of the most important principles of software engineering
 ![](https://cdn-images-1.medium.com/max/1080/1*gRily1Y6mlrOETJeKRgvgw.png)
 
-####Visibility:
+#### Visibility:
 
 In C++ and other OOP languages, you need to write an access modifier when inheriting from a base class, that's what we call it visibility mode.
 
@@ -135,10 +135,15 @@ int main() {
 > Constructor in C++ is a special method that is invoked automatically at the time of object creation. It is used to initialize the data members of new objects generally. The constructor in C++ has the same name as the class or structure. It constructs the values i.e. provides data for the object which is why it is known as constructor. -GeekForGeeks
 
 By default, each class has member functions:
-constructor   		Date();
-destructor    		~Date();
-copy constructor 	Date(const Date& other);
-assignment operator   Date& operator=(const Date& other);
+
+constructor    	   	Date();
+ 
+destructor     	   	~Date();
+
+copy constructor       	Date(const Date& other);
+
+assignment operator      Date& operator=(const Date& other);
+
 
 ##### Constructor:
 
