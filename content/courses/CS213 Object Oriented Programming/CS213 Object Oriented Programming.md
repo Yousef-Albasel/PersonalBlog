@@ -6,7 +6,9 @@ series: ['OOP Course Notes Series']
 description : "OOP Course Notes taken for programming II course."
 
 ---
-بسم الله الرحمن الرحيم
+{{< rawhtml >}}
+ <strong> <center><p style ="font-size:40px;">بسم الله الرحمن الرحيم</p></strong> </center>
+{{< /rawhtml >}}
 
 ## What is this page?
 ------------
@@ -18,9 +20,11 @@ These are my notes for **CS213 OOP** course created for the purpose of revision 
 ------------
 My notes for:
 - Summary for each lecture.
-- Code snippets from lectures.
-- Code examples for each topic, written by Dr. El Ramly.
-- Laps Solutions
+- Code snippets.
+- Code examples for each topic, created by me.
+- Solutions and tasks.
+- Interactive Examples.
+
 
 
 
