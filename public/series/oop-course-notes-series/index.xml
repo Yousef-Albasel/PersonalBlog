@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Albasel Blog</title>
-    <link>https://albasel.netlify.app/</link>
-    <description>Recent content on Albasel Blog</description>
+    <title>OOP Course Notes Series on Albasel Blog</title>
+    <link>https://albasel.netlify.app/series/oop-course-notes-series/</link>
+    <description>Recent content in OOP Course Notes Series on Albasel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2024 23:35:26 +0200</lastBuildDate><atom:link href="https://albasel.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jan 2024 23:35:26 +0200</lastBuildDate><atom:link href="https://albasel.netlify.app/series/oop-course-notes-series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lecture Nine   Templates and Classes</title>
       <link>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-nine-templates-and-classes/</link>
@@ -19,15 +19,6 @@ When called, compiler generates code for specific data types determined in funct
 Better than Function Overloading:
 You need to create only one version of the function 1- Bug fixes will be in one place 2- But number of parameters will be fixed.
 When passing a class object to a function template, ensure that all operators performed by the function template are defined or overloaded in the class definition</description>
-    </item>
-    
-    <item>
-      <title>Chapter One - Why Deep Work is Valuable</title>
-      <link>https://albasel.netlify.app/books/deep-work-cal-newport/chapter-one-why-deep-work-is-valuable/</link>
-      <pubDate>Tue, 02 Jan 2024 20:24:38 +0300</pubDate>
-      
-      <guid>https://albasel.netlify.app/books/deep-work-cal-newport/chapter-one-why-deep-work-is-valuable/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -136,44 +127,6 @@ A programming language follows one or more programming paradigm
 What is this page? These are my notes for CS213 OOP course created for the purpose of revision for the finals.
 What can i find here ? My notes for:
 Summary for each lecture. Code snippets. Code examples for each topic, created by me. Solutions and tasks. Interactive Examples. </description>
-    </item>
-    
-    <item>
-      <title>Atomic Habits Notes by Mostafa Ashraf</title>
-      <link>https://albasel.netlify.app/books/atomic-habits-notes-by-mostafa-ashraf/</link>
-      <pubDate>Wed, 13 Sep 2023 21:08:09 +0300</pubDate>
-      
-      <guid>https://albasel.netlify.app/books/atomic-habits-notes-by-mostafa-ashraf/</guid>
-      <description>الهدف الرئيسي: هدفي من قراءة الكتاب هو هدم العادات السلبية وبناء عادات صحية ومثمرة تحل محلها، مثل القراءة، وممارسة التمارين الرياضية، وتعلم مهارات جديدة، والجانب الديني.
-نموذج العادات ذي الأربع خطوات: الإشارة. التوق. الاستجابة. المكافأة. استراتيجية تراكم المكاسب الهامشية: عدم القدرة على التخلص من العادات السلبية يمكن أن يكون نتيجة تراكم هذه العادة بنسبة ضئيلة يوماً بعد يوم على مدى سنوات. عكس هذه العملية للتخلص من العادة يكون بتراكم عادة جديدة بنسبة ضئيلة يوماً بعد يوم على مدى سنوات.</description>
-    </item>
-    
-    <item>
-      <title>Chapter One - Object Oriented Properties</title>
-      <link>https://albasel.netlify.app/books/object-oriented-thought-process/object-oriented-thought-process/</link>
-      <pubDate>Sat, 02 Sep 2023 20:24:38 +0300</pubDate>
-      
-      <guid>https://albasel.netlify.app/books/object-oriented-thought-process/object-oriented-thought-process/</guid>
-      <description>Object-oriented programming is a programming paradigm, or classification, that organizes a group of data attributes with functions or methods into a unit, known as an object. Typically, OOP languages are class-based, meaning a class defines the data attributes and functions as a blueprint for creating objects, which are instances of the class. One class may represent multiple independent objects, which interact with each other in complex ways.
-First Chapter: Introduction to OOP Concepts: It is important to note that the title of this first chapter is &amp;ldquo;Introduction to Object-Oriented Concepts.</description>
-    </item>
-    
-    <item>
-      <title>Startups Funding   Alejandro Cremades</title>
-      <link>https://albasel.netlify.app/books/startupfundraising/startups-funding-alejandro-cremades/</link>
-      <pubDate>Sat, 02 Sep 2023 17:01:50 +0300</pubDate>
-      
-      <guid>https://albasel.netlify.app/books/startupfundraising/startups-funding-alejandro-cremades/</guid>
-      <description>جمع التمويل للشركات الناشئة - باللغة العربية بعد أن يكتسبَ العملُ التجاريُّ للشركة النَّاشئة الزخمَ المطلوب، يبدأ ظُهورُ المستثمرين المهتمِّين بهذا العمل. فهل يكون الوقت قد حان لإتمام صفقةٍ مع أحَدهم؟ وكيف يحدُّثُ ذلك؟ هل هناك مستويات عدَّة للاستثمار والتمويل؟ يقدِّم هذا الكتاب نصائحَ ثمينةً لوَضْع جدولٍ زمنيٍّ لمهمَّاتِ الصفقة المحتمَلة ومتطلباتها، كما يقدِّمُ التوجيهَ اللازمَ الذي يحتاجُ إليه رياديُّ الأعمال ليتصرَّف بمهنيَّة عند التعامُل مع مختلَف الفرص الاستثماريَّة. ونظرًا إلى الخلفيَّة القانونيَّة للمؤلِّف، بوصفه محاميًا ممارسًا في الولايات المتحدَّة، فإنَّه يدعم الكتاب بمعلوماتٍ قانونيَّة مُثرِية يوضِحُ فيها لكلِّ أصحاب المصلحة متى يُتوقَّع أن يصبحَ الاتِّفاقُ مُلزِمًا قانونًا.</description>
-    </item>
-    
-    <item>
-      <title>About This Blog</title>
-      <link>https://albasel.netlify.app/posts/about-this-blog/</link>
-      <pubDate>Sun, 30 Jul 2023 23:03:03 +0300</pubDate>
-      
-      <guid>https://albasel.netlify.app/posts/about-this-blog/</guid>
-      <description>In this blog, I will be posting anything that comes to mind, whether it&amp;rsquo;s tech posts, history, or even my most personal thoughts. I&amp;rsquo;m planning to make it interesting and entertaining, so please enjoy exploring my blog.</description>
     </item>
     
   </channel>

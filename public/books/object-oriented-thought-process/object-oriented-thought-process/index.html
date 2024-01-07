@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Chapter One - Object Oriented Properties | Albasel Blog</title>
+<meta property="og:title" content="Chapter One - Object Oriented Properties | Albasel Blog" />
+<meta name="twitter:title" content="Chapter One - Object Oriented Properties | Albasel Blog" />
+<meta itemprop="name" content="Chapter One - Object Oriented Properties | Albasel Blog" />
+<meta name="application-name" content="Chapter One - Object Oriented Properties | Albasel Blog" />
+<meta property="og:site_name" content="Albasel blog" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://albasel.netlify.app/" />
+  <meta property="og:image" content="https://albasel.netlify.app/" />
+  <meta name="twitter:image" content="https://albasel.netlify.app/" />
+  <meta name="twitter:image:src" content="https://albasel.netlify.app/" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.115.4">
+
+    
+
+    <link rel="canonical" href="https://albasel.netlify.app/books/object-oriented-thought-process/object-oriented-thought-process/">
+    <link href="/style.min.840eada6dfddec7b8ccfcf867f039bf80b1f16a265ec6e01dc553a3dddc9d509.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://albasel.netlify.app/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://albasel.netlify.app/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/projects/">
+                        Projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/books/">
+                        Books
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/courses/">
+                        Courses
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Chapter One - Object Oriented Properties</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-09-02T20:24:38&#43;03:00" itemprop="datePublished"> Sep 2, 2023 </time>
+                </div>
+                
+            </header><div class="page-content">
+ 
+                <p>Object-oriented programming is a programming paradigm, or classification, that organizes a group of data attributes with functions or methods into a unit, known as an object. Typically, OOP languages are class-based, meaning a class defines the data attributes and functions as a blueprint for creating objects, which are instances of the class. One class may represent multiple independent objects, which interact with each other in complex ways.</p>
+<h2 id="first-chapter-introduction-to-oop-concepts">First Chapter: Introduction to OOP Concepts:</h2>
+<p>It is important to note that the title of this first chapter is &ldquo;Introduction to Object-Oriented Concepts.&rdquo; The operative word here is &ldquo;Concepts,&rdquo; not &ldquo;technologies.&rdquo; Technologies change very quickly in the software industry, whereas concepts evolve.</p>
+<h2 id="procedural-programming-vs-oop">Procedural Programming vs OOP</h2>
+<p>In OO Design the attributes and behaviors are contained within a single in object, whereas in procedural or structured design the attributes and behaviors are normally separated.</p>
+<p><img src="https://devopedia.org/images/article/264/9332.1585228697.jpg" alt="Object-Oriented Programming Concepts">
+<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Classes-and-Objects-in-C.png" alt="C++ Classes and Objects - GeeksforGeeks"></p>
+<h4 id="what-exactly-is-an-object">What Exactly Is an Object?</h4>
+<p>Objects are the building blocks of an OO program. A program that uses OO technology is basically a collection of objects.</p>
+<p>The behavior of an object is what the object can do. In procedural languages the behavior is defined by procedures, functions, and subroutines. In OO programming terminology these behaviors are contained in methods, and you invoke a method by sending a message to it. In our employee example, consider that one of the behaviors required of an employee object is to set and return the values of the various attributes. Thus, each attribute would have corresponding methods, such as <code>setGender()</code> and <code>getGender()</code>. In this case, when another object needs this information, it can send a message to an employee object and ask it what its gender is.</p>
+<h4 id="what-exactly-is-a-class">What Exactly Is a Class?</h4>
+<p>In short, a class is a blueprint for an object. When you instantiate an object, you use a class as the basis for how the object is built. In fact, trying to explain classes and objects is really a chicken-and-egg dilemma. It is difficult to describe a class without using the term object and visa versa. For example, a specific individual bike is an object. However, someone had to have created the blueprints (that is, the class) to build the bike. In OO software, unlike the chicken-and-egg dilemma, we do know what comes first—the class.
+An object cannot be instantiated without a class.</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:717/0*ieq1DK9xP2q2Ztrv" alt="OOP in JavaScript: Explained using games | by ALEXANDRU TAPIRDEA | Level Up  Coding"></p>
+<h2 id="encapsulation-vs-datahiding">Encapsulation vs DataHiding</h2>
+<p>In general Encapsulation means to bundle similar items, simple as that.</p>
+<p>For example, take a Student class where we will have students instance variables and behaviors/methods acting on those instance variables @ one place.</p>
+<p>Why it is important? We don&rsquo;t want our code scattered all around in our code Base.</p>
+<p>If let say we need to make changes then we need find the variants(of that changes) at all the places. By Bundling similar items we are just avoiding such scenarios and it also helps to make our Bundled code more focused.</p>
+<h3 id="data-hiding">Data Hiding</h3>
+<p>It just provides a way to protect your data from the outside world. What it means is, lets say if I made my instance variable public, then anyone can change its state. But if we make our instance variable private/protected then actually we are restricting outside entities from making changes to it.</p>
+<p>Source : <a href="https://stackoverflow.com/questions/12013448/encapsulation-vs-data-hiding-java">https://stackoverflow.com/questions/12013448/encapsulation-vs-data-hiding-java</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">speed</span><span class="p">,</span><span class="n">color</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="n">__self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
+</span></span><span class="line"><span class="cl">	<span class="n">__self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">set_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">value</span><span class="p">):</span> <span class="c1"># setter</span>
+</span></span><span class="line"><span class="cl">	<span class="n">__self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># getter</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">__self</span><span class="o">.</span><span class="n">speed</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">my_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">my_car</span><span class="o">.</span><span class="n">get_speed</span><span class="p">())</span>  <span class="c1"># Output: 60</span>
+</span></span><span class="line"><span class="cl"><span class="n">my_car</span><span class="o">.</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">my_car</span><span class="o">.</span><span class="n">get_speed</span><span class="p">())</span>  <span class="c1"># Output: 70</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Accessing __speed directly (discouraged)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">my_car</span><span class="o">.</span><span class="n">_Car__speed</span><span class="p">)</span>  <span class="c1"># Output: 70</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Encapsulation is achieved by marking the <code>__speed</code> attribute as private using double underscores (<code>__</code>).</li>
+<li>Getter and setter methods (<code>get_speed()</code> and <code>set_speed(value)</code>) provide a controlled interface for accessing and modifying the private <code>__speed</code> attribute.</li>
+<li>Encapsulation allows you to hide the internal details of the <code>Car</code> class, enforce data validation and logic, and signal to other developers not to access private attributes directly.</li>
+<li>While Python doesn&rsquo;t enforce strict access control, the naming convention of double underscores serves as a convention to encourage proper usage of encapsulated attributes.</li>
+</ul>
+<h2 id="inheritance">Inheritance</h2>
+<p>One of the major issues in OO is to factor out commonality of the various classes, inheritance enables a class to inherit the attributes and methods of another class.
+<img src="https://cdn-images-1.medium.com/max/1080/1*gRily1Y6mlrOETJeKRgvgw.png" alt="Inheritance in Object Oriented Programming (Java)"></p>
+<h2 id="abstraction">Abstraction</h2>
+<p>Abstraction in Object-Oriented Programming (OOP) is a fundamental concept that involves simplifying complex systems by focusing on essential properties and behaviors while hiding unnecessary details. It allows programmers to create abstract classes or interfaces that define a blueprint for objects without specifying their specific implementation.</p>
+<ol>
+<li>
+<p>Focuses on essential features: It identifies and defines the most important characteristics and behaviors of objects, ignoring less relevant details.</p>
+</li>
+<li>
+<p>Hides implementation details: Abstraction allows you to conceal the inner workings of an object, providing a high-level interface for interaction while keeping the underlying complexity hidden.</p>
+</li>
+<li>
+<p>Provides a blueprint: Abstract classes or interfaces serve as templates that other classes can inherit from, ensuring consistency and reusability in the code.</p>
+</li>
+<li>
+<p>Promotes code organization: Abstraction helps in organizing and structuring code by breaking it down into manageable and meaningful components.</p>
+</li>
+</ol>
+<h4 id="multiple-inheritance">Multiple Inheritance</h4>
+<p>Multiple inheritance is a feature in some object-oriented programming languages that allows a class to inherit attributes and behaviors from more than one parent class. However, multiple inheritance can lead to complexities and ambiguities, and not all programming languages support it.</p>
+<p><img src="data:image/png;base64,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" alt="Multiple Inheritance in Python - Python Geeks"></p>
+<p>Code example in C++:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Parent class 1: Bird
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Bird</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Bird</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">can_fly</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">fly</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The bird can fly.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">can_fly</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Parent class 2: Mammal
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Mammal</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Mammal</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">has_hair</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">feedMilk</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The mammal can feed milk.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">has_hair</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Child class inheriting from both Bird and Mammal
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Bat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Bird</span><span class="p">,</span> <span class="k">public</span> <span class="n">Mammal</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Bat</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Constructors of parent classes are called automatically
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">displayInfo</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Bat can fly: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">can_fly</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Bat has hair: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">has_hair</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Create an instance of the Bat class
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Bat</span> <span class="n">bat</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Accessing attributes and methods from both parent classes
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">bat</span><span class="p">.</span><span class="n">displayInfo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bat</span><span class="p">.</span><span class="n">fly</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bat</span><span class="p">.</span><span class="n">feedMilk</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+	        
+<div>
+    <h4>This article is part of a series.</h4>
+    <ul class="list-group">
+        
+            
+                <li class="list-group-item active">
+                    Part 1: This Article
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+            </div>
+        </article>
+
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/Yousef-Albasel" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/yousef-albasel-3040a0260/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="https://www.youtube.com/channel/UC1b7IXklDYmLL6WaViAn3sA" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Albasel Y.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noreferrer noopener">Hugo blog awesome</a>
+        theme on
+        <a href="https://gohugo.io" target="_blank" rel="noreferrer noopener">Hugo</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+<script src="/js/copy-code-button.min.js"></script>
+
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://albasel.netlify.app/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

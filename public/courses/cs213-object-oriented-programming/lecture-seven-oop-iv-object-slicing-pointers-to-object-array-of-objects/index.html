@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Lecture Seven -  OOP IV (Object Slicing, Pointers to Object, Array of Objects) | Albasel Blog</title>
+<meta property="og:title" content="Lecture Seven -  OOP IV (Object Slicing, Pointers to Object, Array of Objects) | Albasel Blog" />
+<meta name="twitter:title" content="Lecture Seven -  OOP IV (Object Slicing, Pointers to Object, Array of Objects) | Albasel Blog" />
+<meta itemprop="name" content="Lecture Seven -  OOP IV (Object Slicing, Pointers to Object, Array of Objects) | Albasel Blog" />
+<meta name="application-name" content="Lecture Seven -  OOP IV (Object Slicing, Pointers to Object, Array of Objects) | Albasel Blog" />
+<meta property="og:site_name" content="Albasel blog" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://albasel.netlify.app/" />
+  <meta property="og:image" content="https://albasel.netlify.app/" />
+  <meta name="twitter:image" content="https://albasel.netlify.app/" />
+  <meta name="twitter:image:src" content="https://albasel.netlify.app/" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.115.4">
+
+    
+
+    <link rel="canonical" href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-seven-oop-iv-object-slicing-pointers-to-object-array-of-objects/">
+    <link href="/style.min.840eada6dfddec7b8ccfcf867f039bf80b1f16a265ec6e01dc553a3dddc9d509.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://albasel.netlify.app/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://albasel.netlify.app/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/projects/">
+                        Projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/books/">
+                        Books
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/courses/">
+                        Courses
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Lecture Seven -  OOP IV (Object Slicing, Pointers to Object, Array of Objects)</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-12-31T22:10:45&#43;02:00" itemprop="datePublished"> Dec 31, 2023 </time>
+                </div>
+                
+            </header><div class="page-content">
+ 
+                <h4 id="object-slicing">Object Slicing</h4>
+<p>When a derived class object is assigned to a base class object in C++, the derived class object’s extra attributes are sliced off (not considered) to generate the base class object; and this whole process is termed object slicing.</p>
+<p>consider this coding example:</p>
+<p>we have a super class that has some integer member data (a).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">superClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">superClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">aNum</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">(</span><span class="n">aNum</span><span class="p">){};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m a super class with these data: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>and a derived class, with other member values b and c.</p>
+<p>both have their own implementation of disblay function.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">subClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">superClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">subClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">aNum</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bNum</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cNum</span><span class="p">)</span> <span class="o">:</span> <span class="n">superClass</span><span class="p">(</span><span class="n">aNum</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="n">bNum</span><span class="p">),</span> <span class="n">c</span><span class="p">(</span><span class="n">cNum</span><span class="p">){};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">display</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;I&#39;m a subclass! with these data: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">superClass</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span> <span class="n">obj</span><span class="p">.</span><span class="n">display</span><span class="p">();</span> <span class="p">}</span> <span class="c1">// to print the data
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">superClass</span> <span class="n">f_obj</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">subClass</span> <span class="n">s_obj</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="n">f_obj</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="n">s_obj</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, one would expect the output to be the message displayed by each class implementation for the display function, but instead, an unexpected behavior is observed.</p>
+<pre tabindex="0"><code>output:
+I&#39;m a super class with these data: 1
+I&#39;m a super class with these data: 4
+</code></pre><p>The error occurs because in the print function, we take a parameter of superClass by value,so when you pass a subClass object to this function, it gets sliced, meaning only the superClass part of the object is passed, and the additional members (b and c) are ignored.</p>
+<p>the easy fix is to pass it by reference</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">superClass</span><span class="o">&amp;</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span> <span class="n">obj</span><span class="p">.</span><span class="n">display</span><span class="p">();</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Passing objects by reference rather than by value helps prevent object slicing and allows polymorphism to work as intended. When you pass an object by value, a copy of the object is made, and only the base class part of the object is retained. This process leads to object slicing, where the derived class&rsquo;s additional members are truncated or &ldquo;sliced off.&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>On the other hand, passing an object by reference (or by pointer) avoids making a copy. Instead, a reference to the original object is used. This way, the actual derived class object retains its full structure, and when calling a virtual function like display, the correct implementation from the derived class is invoked.</p>
+</blockquote>
+<pre tabindex="0"><code>output:
+I&#39;m a super class with these data: 1
+I&#39;m a subclass! with these data: 4 5 6
+</code></pre><hr>
+<h4 id="pointers-to-objects">Pointers to objects</h4>
+<p>Basically, you can create a pointer to object!</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">superClass</span> <span class="n">f_obj</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">superClass</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">f_obj</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">).</span><span class="n">display</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// or p-&gt;display();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+  <div class="warning-container" style="background-color: #ffebee; border-left: 6px solid #f44336; padding: 10px;">
+  <p class="speshal-fancy-custom" align="left" style="color: red;"> You need to have <strong>(*p)</strong> in parenthesis since a dot operator has higher precedence than dereferencing.</p></div>
+
+<p><strong>Member instances vs. Member pointers to instances</strong></p>
+<p>In general use class **instances as members **</p>
+<ul>
+<li>
+<p>restricts flexibility but offers more protection against error
+Because the compiler automatically constructs and destroys class
+instance members.</p>
+</li>
+<li>
+<p>Copies them on assignment and initialisation.</p>
+</li>
+<li>
+<p>If the member instance is private, access is limited to members
+functions and friend functions</p>
+</li>
+</ul>
+<p><strong>Using member pointers requires</strong> more effort on the part of
+the programmer and caution about errors</p>
+<p>You must remember to explicitly construct and destroy the
+referenced object and initialise the pointer to it.</p>
+<ul>
+<li>The size isn’t limited because it’s not created on the stack.</li>
+<li>The scope of the object pointer isn’t limited to the method where it’s created. We need to explicitly delete it after use to avoid memory leaks.</li>
+<li>There’s no need to create a copy when we try to return objects from a function.</li>
+</ul>
+<p><a href="https://www.geeksforgeeks.org/this-pointer-in-c/" title="Check this very good explaination for `this` pointer!">Check this very good explaination for <code>this</code> pointer!</a></p>
+<p>also consider this example where you need to do a type cast from a base class pointer to a derived class pointer to use a function specified for a derived class.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">class</span> <span class="n">Animal</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nl">private</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">weight</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nl">public</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">Animal</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="o">:</span> <span class="nf">weight</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="nf">height</span><span class="p">(</span><span class="n">h</span><span class="p">){};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">class</span> <span class="nl">Cat</span> <span class="p">:</span> <span class="n">public</span> <span class="n">Animal</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nl">public</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">Cat</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="o">:</span> <span class="nf">Animal</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">){};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">meow</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Meow :3 uwu</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Animal</span> <span class="o">*</span><span class="n">some_animal</span> <span class="o">=</span> <span class="n">new</span> <span class="nf">Cat</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// some_animal.meow(); // Error,you can&#39;t access the function like this
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="p">((</span><span class="n">Cat</span> <span class="o">*</span><span class="p">)</span><span class="n">some_animal</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">meow</span><span class="p">();</span> <span class="c1">// Works
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">delete</span> <span class="n">some_animal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="array-of-objects">Array of Objects</h4>
+<p>Objects can be the elements of an array:</p>
+<p><code>InventoryItem inventory[40];</code>
+Default constructor for object is used when an array is defined.</p>
+<p>Must use initializer list to invoke constructor that
+takes arguments.</p>
+<p>if a constructor takes one argument:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">InventoryItem</span> <span class="n">inventory</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;Hammer&#34;</span><span class="p">,</span> <span class="s">&#34;Wrench&#34;</span><span class="p">,</span> <span class="s">&#34;Pliers&#34;</span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>if it takes more than one argument:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">InventoryItem</span> <span class="n">inventory</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="nf">InventoryItem</span><span class="p">(</span><span class="s">&#34;Hammer&#34;</span><span class="p">,</span><span class="mf">6.9</span><span class="p">,</span><span class="mf">4.20</span><span class="p">),</span><span class="nf">InventoryItem</span><span class="p">(</span><span class="s">&#34;Nail&#34;</span><span class="p">,</span><span class="mf">10.2</span><span class="p">,</span><span class="mf">2.20</span><span class="p">),</span> <span class="nf">InventoryItem</span><span class="p">(</span><span class="s">&#34;ScrewDriver&#34;</span><span class="p">,</span><span class="mf">2.9</span><span class="p">,</span><span class="mf">3.01</span><span class="p">)};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="using-dynamic-arrays">Using Dynamic arrays</h5>
+<p>Back to our animal and cat example, if we need to create an array of animals, we may use.</p>
+<p><strong>1 - <code>new</code> operator</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">Animal</span><span class="o">*</span> <span class="n">animals</span> <span class="o">=</span> <span class="n">new</span> <span class="n">animals</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>2 - using <code>malloc()</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">Animal</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">Animal</span><span class="o">*</span><span class="p">)</span> <span class="nf">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Animal</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>3 - Using an array of pointers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">Animal</span><span class="o">*</span> <span class="n">animals</span><span class="p">[]</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="n">new</span> <span class="nf">Animal</span><span class="p">(</span><span class="s">&#34;animal&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">new</span> <span class="nf">Cat</span><span class="p">(</span><span class="s">&#34;cat&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">new</span> <span class="nf">Dog</span><span class="p">(</span><span class="s">&#34;dog&#34;</span><span class="p">)};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>4 - Using pointer to pointers (because you are a weirdo)</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">Animal</span><span class="o">**</span> <span class="n">animals</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Animal</span><span class="o">*</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">animals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="nf">Animal</span><span class="p">(</span><span class="s">&#34;animal&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">animals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="nf">Cat</span><span class="p">(</span><span class="s">&#34;cat&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">animals</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="nf">Dog</span><span class="p">(</span><span class="s">&#34;dog&#34;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>5 - Using STLS like vector</strong></p>
+<hr>
+<p>Now we are officially done with all the important OOP Concepts, next  we will discuss <strong>(Unified Modeling Language)</strong> with interactive examples.</p>
+
+	        
+<div>
+    <h4>This article is part of a series.</h4>
+    <ul class="list-group">
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/cs213-object-oriented-programming/">
+                        Part 1: CS213 Object Oriented Programming
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-one-introduction-to-object-oriented/">
+                        Part 2: Lecture One - Introduction to Object Oriented
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-two-structs-revision/">
+                        Part 3: Lecture Two -   Structs Revision
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-three-pointers/">
+                        Part 4: Lecture Three - Pointers
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-four-oop-i/">
+                        Part 5: Lecture Four - OOP I (Identity, Classification, Abstraction, Encapsulation)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-five-oop-ii/">
+                        Part 6: Lecture Five - OOP II (Inheritance and Constructors)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-six-oop-iii/">
+                        Part 7: Lecture Six -   OOP III (Polymorphism, override, overload, virtual, friend)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item active">
+                    Part 8: This Article
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-eight-oop-v-unified-modeling-language/">
+                        Part 9: Lecture Eight -  OOP V (Unified Modeling Language)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-nine-templates-and-classes/">
+                        Part 10: Lecture Nine   Templates and Classes
+                    </a>
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+            </div>
+        </article>
+
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/Yousef-Albasel" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/yousef-albasel-3040a0260/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="https://www.youtube.com/channel/UC1b7IXklDYmLL6WaViAn3sA" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Albasel Y.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noreferrer noopener">Hugo blog awesome</a>
+        theme on
+        <a href="https://gohugo.io" target="_blank" rel="noreferrer noopener">Hugo</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+<script src="/js/copy-code-button.min.js"></script>
+
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://albasel.netlify.app/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

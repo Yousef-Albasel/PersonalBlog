@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Object Oriented Thought Process on Albasel Blog</title>
+    <link>https://albasel.netlify.app/books/object-oriented-thought-process/</link>
+    <description>Recent content in Object Oriented Thought Process on Albasel Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Dec 2023 22:23:10 +0200</lastBuildDate><atom:link href="https://albasel.netlify.app/books/object-oriented-thought-process/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chapter One - Object Oriented Properties</title>
+      <link>https://albasel.netlify.app/books/object-oriented-thought-process/object-oriented-thought-process/</link>
+      <pubDate>Sat, 02 Sep 2023 20:24:38 +0300</pubDate>
+      
+      <guid>https://albasel.netlify.app/books/object-oriented-thought-process/object-oriented-thought-process/</guid>
+      <description>Object-oriented programming is a programming paradigm, or classification, that organizes a group of data attributes with functions or methods into a unit, known as an object. Typically, OOP languages are class-based, meaning a class defines the data attributes and functions as a blueprint for creating objects, which are instances of the class. One class may represent multiple independent objects, which interact with each other in complex ways.
+First Chapter: Introduction to OOP Concepts: It is important to note that the title of this first chapter is &amp;ldquo;Introduction to Object-Oriented Concepts.</description>
+    </item>
+    
+  </channel>
+</rss>

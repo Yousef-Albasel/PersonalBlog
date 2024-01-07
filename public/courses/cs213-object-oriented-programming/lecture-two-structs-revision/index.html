@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Lecture Two -   Structs Revision | Albasel Blog</title>
+<meta property="og:title" content="Lecture Two -   Structs Revision | Albasel Blog" />
+<meta name="twitter:title" content="Lecture Two -   Structs Revision | Albasel Blog" />
+<meta itemprop="name" content="Lecture Two -   Structs Revision | Albasel Blog" />
+<meta name="application-name" content="Lecture Two -   Structs Revision | Albasel Blog" />
+<meta property="og:site_name" content="Albasel blog" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+
+
+  <meta itemprop="image" content="https://albasel.netlify.app/" />
+  <meta property="og:image" content="https://albasel.netlify.app/" />
+  <meta name="twitter:image" content="https://albasel.netlify.app/" />
+  <meta name="twitter:image:src" content="https://albasel.netlify.app/" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.115.4">
+
+    
+
+    <link rel="canonical" href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-two-structs-revision/">
+    <link href="/style.min.840eada6dfddec7b8ccfcf867f039bf80b1f16a265ec6e01dc553a3dddc9d509.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://albasel.netlify.app/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://albasel.netlify.app/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/projects/">
+                        Projects
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/books/">
+                        Books
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/courses/">
+                        Courses
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Lecture Two -   Structs Revision</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-12-27T22:45:47&#43;02:00" itemprop="datePublished"> Dec 27, 2023 </time>
+                </div>
+                
+            </header><div class="page-content">
+ 
+                <p>Structure: C++ construct that allows multiple related variables to be grouped together</p>
+<p><strong>General Format</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="err">&lt;</span><span class="nc">structName</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">type1</span> <span class="n">field1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">type2</span> <span class="n">field2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span> <span class="c1">// must have ; 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>How to access structs?</strong>
+You can access structs and assign new date using the . operator, you also can use the input streams with it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">stud1</span><span class="p">.</span><span class="n">studentID</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">stud1</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">stud1</span><span class="p">.</span><span class="n">gpa</span> <span class="o">=</span> <span class="mf">3.75</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>ex1:</strong></p>
+<p><img src="https://linuxhint.com/wp-content/uploads/2021/08/Structures-in-C-2.png" alt=""></p>
+<p>Cannot compare struct variables directly:
+<code>if (stud1 == stud2) // won’t work </code>
+Instead, must compare on a field basis:
+<code>if (stud1.studentID == stud2.studentID) ...</code></p>
+<p><strong>Can also overload &lt; and == operators</strong></p>
+<h4 id="how-to-initialize-a-struct-">How to initialize a struct ?</h4>
+<p>struct variable can be initialized when defined:
+<code>Student s = {11465, &quot;Joan&quot;, 2, 3.75};</code>
+Can also be initialized member-by-member after definition:
+<code>s.name = &quot;Joan&quot;;</code>
+<code>s.gpa = 3.75;</code></p>
+<p><strong>You can also use a constructor with structs</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Dimensions</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Constructor  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Dimensions</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="n">length</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span> <span class="n">width</span> <span class="o">=</span> <span class="n">w</span><span class="p">;</span> <span class="n">height</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>You can initialize a struct using a constructor, or use copy constructor</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">student</span> <span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">15</span><span class="p">,</span> <span class="s">&#34;Saurav&#34;</span><span class="p">,</span> <span class="mi">12500</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">student</span> <span class="n">s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span> <span class="o">=</span> <span class="n">s2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="structs-can-have-nested-structs">Structs can have nested structs!</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">A</span> <span class="n">structure</span> <span class="n">can</span> <span class="n">have</span> <span class="n">another</span> <span class="n">structure</span> <span class="n">as</span> <span class="n">a</span> 
+</span></span><span class="line"><span class="cl"><span class="n">member</span><span class="p">.</span> 
+</span></span><span class="line"><span class="cl"> <span class="k">struct</span> <span class="nc">ID</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>  <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">Country</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"> <span class="k">struct</span> <span class="nc">License</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl"> <span class="n">ID</span> <span class="n">identification</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="n">string</span> <span class="n">expiration_date</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="assignment">Assignment:</h2>
+<p>Write a definition for a structure type for records consisting of a person’s
+wage rate, accrued vacation (which is some whole number of days), and
+status (which is either hourly or salaried). Represent the status as one of
+the two char values &lsquo;H&rsquo; and &lsquo;S&rsquo;. Call the type EmployeeRecord</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">EmployeeRecord</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">wageRate</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">accruedVacation</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">status</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">EmployeeRecord</span> <span class="n">employee1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">employee1</span><span class="p">.</span><span class="n">wageRate</span> <span class="o">=</span> <span class="mf">25.50</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">employee1</span><span class="p">.</span><span class="n">accruedVacation</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">employee1</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="sc">&#39;H&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Employee 1 Information:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Wage Rate: $&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">employee1</span><span class="p">.</span><span class="n">wageRate</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; per hour&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Accrued Vacation: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">employee1</span><span class="p">.</span><span class="n">accruedVacation</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; days&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Status: &#34;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">employee1</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="sc">&#39;H&#39;</span> <span class="o">?</span> <span class="s">&#34;Hourly&#34;</span> <span class="o">:</span> <span class="s">&#34;Salaried&#34;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+	        
+<div>
+    <h4>This article is part of a series.</h4>
+    <ul class="list-group">
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/cs213-object-oriented-programming/">
+                        Part 1: CS213 Object Oriented Programming
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-one-introduction-to-object-oriented/">
+                        Part 2: Lecture One - Introduction to Object Oriented
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item active">
+                    Part 3: This Article
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-three-pointers/">
+                        Part 4: Lecture Three - Pointers
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-four-oop-i/">
+                        Part 5: Lecture Four - OOP I (Identity, Classification, Abstraction, Encapsulation)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-five-oop-ii/">
+                        Part 6: Lecture Five - OOP II (Inheritance and Constructors)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-six-oop-iii/">
+                        Part 7: Lecture Six -   OOP III (Polymorphism, override, overload, virtual, friend)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-seven-oop-iv-object-slicing-pointers-to-object-array-of-objects/">
+                        Part 8: Lecture Seven -  OOP IV (Object Slicing, Pointers to Object, Array of Objects)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-eight-oop-v-unified-modeling-language/">
+                        Part 9: Lecture Eight -  OOP V (Unified Modeling Language)
+                    </a>
+                </li>
+            
+        
+            
+                <li class="list-group-item">
+                    <a href="https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-nine-templates-and-classes/">
+                        Part 10: Lecture Nine   Templates and Classes
+                    </a>
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+            </div>
+        </article>
+
+    </main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/Yousef-Albasel" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/yousef-albasel-3040a0260/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="https://www.youtube.com/channel/UC1b7IXklDYmLL6WaViAn3sA" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Albasel Y.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noreferrer noopener">Hugo blog awesome</a>
+        theme on
+        <a href="https://gohugo.io" target="_blank" rel="noreferrer noopener">Hugo</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+<script src="/js/copy-code-button.min.js"></script>
+
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://albasel.netlify.app/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

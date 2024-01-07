@@ -6,27 +6,7 @@
     <description>Recent content in Posts on Albasel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Aug 2023 22:23:02 +0300</lastBuildDate><atom:link href="https://albasel.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Misconceptions About FCIS</title>
-      <link>https://albasel.netlify.app/posts/misconceptions-about-fcis/</link>
-      <pubDate>Sun, 06 Aug 2023 22:23:02 +0300</pubDate>
-      
-      <guid>https://albasel.netlify.app/posts/misconceptions-about-fcis/</guid>
-      <description>High school exams are finished, and a lot of students have started looking for the perfect college to fit their ambitions and desires. Computer science has become the trend nowadays, with students from all steams wanting to join it. Unfortunately, a lot of misconceptions happen when it comes to talking about Computer Science college.
-1- It&amp;rsquo;s all about coding While coding is a big part of CS study, it&amp;rsquo;s not the main focus.</description>
-    </item>
-    
-    <item>
-      <title>Math and Computersci</title>
-      <link>https://albasel.netlify.app/posts/math-and-computersci/</link>
-      <pubDate>Tue, 01 Aug 2023 12:19:41 +0300</pubDate>
-      
-      <guid>https://albasel.netlify.app/posts/math-and-computersci/</guid>
-      <description>I never was a fan of Mathematics. Maybe it&amp;rsquo;s the way I learned it in my early days. Why do we CS students study it? Aren&amp;rsquo;t we supposed to create some C++ programs instead? Well, actually, math is crucial for programmers: those who just need to create web pages, and those who build AI models.
-For web developers , math plays a crucial role in the process of creating both front and back ends.</description>
-    </item>
-    
+    <lastBuildDate>Sun, 30 Jul 2023 23:03:03 +0300</lastBuildDate><atom:link href="https://albasel.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About This Blog</title>
       <link>https://albasel.netlify.app/posts/about-this-blog/</link>

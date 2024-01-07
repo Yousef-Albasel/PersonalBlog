@@ -2,14 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://albasel.netlify.app/books/startups-funding-alejandro-cremades/</loc>
-  </url><url>
     <loc>https://albasel.netlify.app/</loc>
+    <lastmod>2024-01-02T23:35:26+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/</loc>
+    <lastmod>2024-01-02T23:35:26+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-nine-templates-and-classes/</loc>
+    <lastmod>2024-01-02T23:35:26+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/series/oop-course-notes-series/</loc>
+    <lastmod>2024-01-02T23:35:26+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/series/</loc>
+    <lastmod>2024-01-02T23:35:26+02:00</lastmod>
   </url><url>
     <loc>https://albasel.netlify.app/books/</loc>
+    <lastmod>2024-01-02T20:24:38+03:00</lastmod>
   </url><url>
-    <loc>https://albasel.netlify.app/categories/</loc>
+    <loc>https://albasel.netlify.app/books/deep-work-cal-newport/chapter-one-why-deep-work-is-valuable/</loc>
+    <lastmod>2024-01-02T20:24:38+03:00</lastmod>
   </url><url>
-    <loc>https://albasel.netlify.app/tags/</loc>
+    <loc>https://albasel.netlify.app/series/deepwork/</loc>
+    <lastmod>2024-01-02T20:24:38+03:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-eight-oop-v-unified-modeling-language/</loc>
+    <lastmod>2023-12-31T23:12:28+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-seven-oop-iv-object-slicing-pointers-to-object-array-of-objects/</loc>
+    <lastmod>2023-12-31T22:10:45+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-six-oop-iii/</loc>
+    <lastmod>2023-12-31T19:35:50+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-five-oop-ii/</loc>
+    <lastmod>2023-12-30T01:03:40+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-four-oop-i/</loc>
+    <lastmod>2023-12-28T01:16:27+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-three-pointers/</loc>
+    <lastmod>2023-12-28T00:08:51+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-two-structs-revision/</loc>
+    <lastmod>2023-12-27T22:45:47+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/books/deep-work-cal-newport/</loc>
+    <lastmod>2023-12-27T22:23:10+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/books/object-oriented-thought-process/</loc>
+    <lastmod>2023-12-27T22:23:10+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/books/startupfundraising/</loc>
+    <lastmod>2023-12-27T22:22:32+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/</loc>
+    <lastmod>2023-12-27T22:08:35+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-one-introduction-to-object-oriented/</loc>
+    <lastmod>2023-12-27T21:59:24+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/courses/cs213-object-oriented-programming/cs213-object-oriented-programming/</loc>
+    <lastmod>2023-12-27T21:35:03+02:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/books/atomic-habits-notes-by-mostafa-ashraf/</loc>
+    <lastmod>2023-09-13T21:08:09+03:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/books/object-oriented-thought-process/object-oriented-thought-process/</loc>
+    <lastmod>2023-09-02T20:24:38+03:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/series/oop-book/</loc>
+    <lastmod>2023-09-02T20:24:38+03:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/books/startupfundraising/startups-funding-alejandro-cremades/</loc>
+    <lastmod>2023-09-02T17:01:50+03:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/posts/about-this-blog/</loc>
+    <lastmod>2023-07-30T23:03:03+03:00</lastmod>
+  </url><url>
+    <loc>https://albasel.netlify.app/posts/</loc>
+    <lastmod>2023-07-30T23:03:03+03:00</lastmod>
   </url>
 </urlset>
