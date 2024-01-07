@@ -140,18 +140,26 @@ Exists between two classes if the changes to the definition of one may cause cha
 
 ##### Here is a simple example to demonstrate relationships between classes
 
-**ex 2:**
-> 2 Years ago a youtuber called Philza lost his 5 Years minecraft world record due to a baby zombie, creeper and a spider attacking him! Let's break this scene down to a bunch of classes and objects
+**ex 2:** Try reading this UML design 
+![](https://i.postimg.cc/yNgXtZgV/image.png)
+
+in This example we have a House analogy.
+- a house must contain 1 **kitchen** and 1 **bathroom**, and **mutliple but not less than one** bedroom !
+- it **may ** contain a Mortage and **may not**.
+- it **must has** a mailbox as a part of it,** but it can exist without it**.
+
+
+More complicated one? check [this article](https://cutt.ly/1wHOmzKG "this article") in medium.
+
+
+**ex 3:**
+> 2 Years ago a youtuber called Philza lost his 5 Years minecraft world due to a baby zombie, creeper and a spider! Let's break this scene down to a bunch of classes and objects
 
 ![](https://i.postimg.cc/yNZVrGkd/Screenshot-1.png)
 
 So we have an abstract class called `Entity` and that entity can be a player, zombie, creeper, bat or any other mob, can be hostile or passive, can have different attributes, we also have a class for `Tools` which can be equibbed, has a durability and speed, it can be a sword, pickaxe, axe or whatever, and finally let's consider making a class for `Block` which a player can hold up to 64 per a slot. 
 
-knowing these informations, I encourage you to make you own UML class, and just emphasize class relationships, attributes and methods are not neccessary
+knowing these informations, I encourage you to make you own UML class, there is no wrong UML class design but there are bad ones, so do your best.
 
 You can use : https://online.visual-paradigm.com/ for designing a class diagram or just draw it anywhere.
-
-
-You can few tons of uml examples here, try reading them: [UML Archieve](https://itsourcecode.com/topics/class/?source=post_page-----456b00a808ae-------------------------------- "UML Archieve")
-
 
