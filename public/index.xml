@@ -6,7 +6,26 @@
     <description>Recent content on Albasel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2024 23:35:26 +0200</lastBuildDate><atom:link href="https://albasel.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Jan 2024 18:26:04 +0200</lastBuildDate><atom:link href="https://albasel.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture Ten   Const and Exception Handling</title>
+      <link>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-ten-const-and-exception-handling/</link>
+      <pubDate>Sun, 07 Jan 2024 17:43:24 +0200</pubDate>
+      
+      <guid>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-ten-const-and-exception-handling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code Examples #1 - Important Object Slicing Example</title>
+      <link>https://albasel.netlify.app/courses/cs213-object-oriented-programming/important-object-slicing-example/</link>
+      <pubDate>Sun, 07 Jan 2024 16:42:29 +0200</pubDate>
+      
+      <guid>https://albasel.netlify.app/courses/cs213-object-oriented-programming/important-object-slicing-example/</guid>
+      <description>Here is an example of object slicing i found in the midterm exam
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 #include &amp;lt;iostream&amp;gt; using namespace std; class Pet { public: Pet(){}; Pet(string name) : name(name){}; virtual void print() { cout &amp;lt;&amp;lt; name; }; // Print Pet name protected: string name; }; class Dog : public Pet { public: Dog(string breed, string petname) : breed(breed), Pet(petname){}; virtual void print() { cout &amp;lt;&amp;lt; breed &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; name; }; private: string breed; }; class Cat : public Pet { public: Cat(string name, string color) : color(color), Pet(name){}; virtual void print() { cout &amp;lt;&amp;lt; color &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; name; }; private: string color; }; class PetList { public: // initializes maxPets to n and nPets to 0 and creates an array PetList(int n) : maxPets(n) { pets = new Pet[maxPets]; }; Pet &amp;amp;operator[](int i) { return pets[i]; }; private: Pet *pets; // Pointer to dyanamic array of pets int maxPets = 10; // maximum number of pet objects that can be stored int nPets = 0; // actual number of pet objects stored in the list }; int main() { PetList lst(3); lst[0] = Pet(&amp;#34;Tito&amp;#34;); lst[1] = Cat(&amp;#34;Luna&amp;#34;, &amp;#34;Fluffy&amp;#34;); lst[2] = Dog(&amp;#34;Puppy&amp;#34;, &amp;#34;Ga3fr&amp;#34;); for (auto i = 0; i &amp;lt; 3; i++) { lst[i].</description>
+    </item>
+    
     <item>
       <title>Lecture Nine   Templates and Classes</title>
       <link>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-nine-templates-and-classes/</link>
@@ -36,7 +55,9 @@ When passing a class object to a function template, ensure that all operators pe
       <pubDate>Sun, 31 Dec 2023 23:12:28 +0200</pubDate>
       
       <guid>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-eight-oop-v-unified-modeling-language/</guid>
-      <description></description>
+      <description>Unified Modeling Language, is a standardized modeling language widely used in software engineering for visualizing, specifying, constructing, and documenting the artifacts of a software system.
+I will be using this Very good reference : https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/ for most of the page, you can use any, but don&amp;rsquo;t forget to check the tasks here.
+These are some types of UML Diagrams. Please note that we are only concerned with **Class Diagram** UML Diagram Type Description Class Diagram Represents the static structure of a system, depicting classes, attributes, operations, and relationships.</description>
     </item>
     
     <item>

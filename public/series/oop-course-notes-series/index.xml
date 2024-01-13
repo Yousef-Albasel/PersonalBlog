@@ -6,7 +6,16 @@
     <description>Recent content in OOP Course Notes Series on Albasel Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2024 23:35:26 +0200</lastBuildDate><atom:link href="https://albasel.netlify.app/series/oop-course-notes-series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Jan 2024 17:43:24 +0200</lastBuildDate><atom:link href="https://albasel.netlify.app/series/oop-course-notes-series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture Ten   Const and Exception Handling</title>
+      <link>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-ten-const-and-exception-handling/</link>
+      <pubDate>Sun, 07 Jan 2024 17:43:24 +0200</pubDate>
+      
+      <guid>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-ten-const-and-exception-handling/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Lecture Nine   Templates and Classes</title>
       <link>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-nine-templates-and-classes/</link>
@@ -27,7 +36,9 @@ When passing a class object to a function template, ensure that all operators pe
       <pubDate>Sun, 31 Dec 2023 23:12:28 +0200</pubDate>
       
       <guid>https://albasel.netlify.app/courses/cs213-object-oriented-programming/lecture-eight-oop-v-unified-modeling-language/</guid>
-      <description></description>
+      <description>Unified Modeling Language, is a standardized modeling language widely used in software engineering for visualizing, specifying, constructing, and documenting the artifacts of a software system.
+I will be using this Very good reference : https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/ for most of the page, you can use any, but don&amp;rsquo;t forget to check the tasks here.
+These are some types of UML Diagrams. Please note that we are only concerned with **Class Diagram** UML Diagram Type Description Class Diagram Represents the static structure of a system, depicting classes, attributes, operations, and relationships.</description>
     </item>
     
     <item>
