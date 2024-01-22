@@ -1,5 +1,5 @@
 ---
-title: "P1   Getting Started"
+title: "P1 - Getting Started"
 date: 2024-01-21T03:17:06+02:00
 draft: false
 ---
